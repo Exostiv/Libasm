@@ -15,7 +15,6 @@ int main() {
     // Test ft_strlen
     printf("Testing ft_strlen:\n");
     printf("Length of \"Hello\": %zu (expected: %zu)\n", ft_strlen("Hellooo"), strlen("Hellooo"));
-    printf("Avant ft_strcpy: dest = %p, src = %s\n", dup, "Hello, world!");
 
     // Test ft_strcpy
     printf("\nTesting ft_strcpy:\n");
