@@ -18,7 +18,8 @@ int main() {
 
     // Test ft_strcpy
     printf("\nTesting ft_strcpy:\n");
-    char dest[6];
+    char *source = "Hello";
+    char dest[strlen(source) + 1];
     printf("Copy \"Hello\" into dest: %s (expected: Hello)\n", ft_strcpy(dest, "Hello"));
     
     // Test ft_strcmp
