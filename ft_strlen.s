@@ -2,11 +2,16 @@ section .text
 global ft_strlen
 
 ft_strlen:
-    xor rax, rax            ; Rax = 0, compteur de caractères
+    test rdi, rdi            ; Vérifier si NULL
+    je .return_zero          ; Retourner 0 si NULL
+    xor rax, rax             ; Initialiser rax à 0
 .loop:
-    cmp byte [rdi + rax], 0 ; Compare chaque caractère avec '\0'
-    je .done                ; Si '\0', on sort
-    inc rax                 ; Incrémente le compteur
-    jmp .loop               ; Répète la boucle
+    cmp byte [rdi + rax], 0  ; Vérifier si fin de chaîne
+    je .done
+    inc rax
+    jmp .loop
 .done:
-    ret                     ; Retourne la longueur
+    ret
+.return_zero:
+    xor rax, rax
+    ret

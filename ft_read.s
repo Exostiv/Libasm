@@ -17,4 +17,3 @@ ft_read:
     mov [rax], edx             ; set errno = error code
     mov rax, -1                ; return -1
     ret
-
